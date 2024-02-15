@@ -10,7 +10,7 @@ const Hero = () => {
     return (
         <section className="flex flex-wrap xl:justify-between gap-7">
             <CustomCard data-aos="zoom-out-down" className="flex flex-col gap-5 justify-between sm:w-full xl:w-[68.25%]" >
-                <div className="flex flex-col gap-5">
+                <div className="flex flex-col items-center md:items-start gap-5">
                     <Avatar className="w-[10rem] h-[10rem] object-contain">
                         <AvatarImage src={Profile} alt="@zeke" />
                         <AvatarFallback>CN</AvatarFallback>
