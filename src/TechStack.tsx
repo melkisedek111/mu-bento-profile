@@ -225,7 +225,7 @@ const TechStack = () => {
     return (
         <section className="flex flex-row gap-7">
             <CustomCard className="flex flex-col gap-7">
-                <div className="flex gap-12 flex-wrap sm:justify-center">
+                <div className="flex gap-12 flex-wrap justify-center">
                     {
                         techStacks.map(item => (
                             <TechCardWithPopover

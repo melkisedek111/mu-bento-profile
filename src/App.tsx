@@ -78,7 +78,7 @@ function App() {
         document.title = "Zeke | Freelance Web Developer"
     }, [])
     return (
-        <div className="bg-customBackground px-10 h-full py-10 overflow-hidden">
+        <div className="bg-customBackground sm:px-1 md:px-5 lg:px-8 xl:px-10 h-full py-10 overflow-hidden">
             <Navbar scrollIntoView={scrollIntoView} />
             <div className="flex flex-col gap-7">
                 <div ref={heroRef}>
