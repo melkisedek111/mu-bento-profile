@@ -18,7 +18,7 @@ const ServiceCard = ({ title, icon: Icon, description, ...otherProps }: ServiceC
         <div {...otherProps}>
             <Icon className="text-white text-6xl" />
             <h4 className="text-2xl my-5">{title}</h4>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground text-justify">
                 {description}
             </p>
         </div>
