@@ -41,7 +41,7 @@ const TechCardWithPopover = (props: TCustomCardWithPopoverProps) => {
                     </CustomCard>
                 </div>
             </PopoverTrigger>
-            <PopoverContent className="min-w-[400px] bg-customCard">
+            <PopoverContent className="min-w-[370px] md:min-w-[400px] bg-customCard">
                 <div className="flex items-center justify-between text-white">
                     <div>
                         <p className="text-sm">Name: <span className="font-semibold">{props.name}</span> </p>
