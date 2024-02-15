@@ -41,7 +41,7 @@ const TechCardWithPopover = (props: TCustomCardWithPopoverProps) => {
                     </CustomCard>
                 </div>
             </PopoverTrigger>
-            <PopoverContent className="min-w-[370px] md:min-w-[400px] bg-customCard">
+            <PopoverContent className="min-w-[360px] md:min-w-[400px] bg-customCard">
                 <div className="flex items-center justify-between text-white">
                     <div>
                         <p className="text-sm">Name: <span className="font-semibold">{props.name}</span> </p>
@@ -49,7 +49,7 @@ const TechCardWithPopover = (props: TCustomCardWithPopoverProps) => {
                         <p className="text-sm">Personal Project: <span className="font-semibold">{props.miniProjects} project(s)</span> </p>
                         <p className="text-sm">Professional Experience: <span className="font-semibold">{props.professionalExperience} years(s)</span> </p>
                     </div>
-                    <img src={props.icon} alt={props.name} className="w-[60px] object-contain" />
+                    <img src={props.icon} alt={props.name} className="max-w-[60px] object-contain" />
                 </div>
             </PopoverContent>
         </Popover>
