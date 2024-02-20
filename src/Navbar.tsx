@@ -48,10 +48,10 @@ const Navbar = ({scrollIntoView}: NavbarProps) => {
     return (
         <div className="flex items-center justify-center md:justify-center lg:justify-between flex-wrap gap-10 text-white pb-11 pt-16">
             <div className="flex items-center gap-4">
-                <h3 className="scroll-m-20  text-5xl font-semibold tracking-tight">
+                <h3 className="scroll-m-20  text-5xl font-semibold tracking-tight" data-aos="fade-right">
                     Zeke
                 </h3>
-                <img src={Logo} alt="Zeke" className="max-w-[50px]" />
+                <img src={Logo} alt="Zeke" className="max-w-[50px]" data-aos="fade-down"/>
             </div>
 
             <div className="flex items-center justify-center md:justify-center lg:justify-between  flex-wrap gap-10">

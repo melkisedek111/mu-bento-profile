@@ -158,15 +158,15 @@ const Project = () => {
     const columns = 4;
 
     const adjustedItems: TProjects[] = fillUpRows(projects, columns);
-    
+    // data-aos={randomTransition[Math.floor(Math.random() * 8)]}
     return (
-        <section className="flex flex-wrap gap-7 lg:justify-between">
+        <section className="flex flex-wrap gap-7 lg:justify-between xl:justify-normal">
             {
                 adjustedItems.map((item, index) => (
-                    <CustomCard  key={index} className="sm:w-full md:w-full lg:w-[48.49%] xl:w-[31.8%] 2xl:w-[465px] hover-inside-image flex flex-col gap-5 justify-between" data-aos={randomTransition[Math.floor(Math.random() * 8)]}>
+                    <CustomCard  key={index} className="sm:w-full md:w-full lg:w-[48.49%] xl:w-[31.8%] 2xl:w-[32.3%] hover-inside-image flex flex-col gap-5" data-aos={randomTransition[Math.floor(Math.random() * 8)]}>
                         {
                             item.isLottie ? (
-                                <Lottie animationData={item.lottie} loop={true} className="" />
+                                <Lottie animationData={item.lottie} loop={true} className="max-w-[75%] m-auto" />
                             ) : (
                                 <>
                                     <div className="flex items-center justify-between">
@@ -183,7 +183,7 @@ const Project = () => {
                                         }
                                     </div>
                                     <div className="relative overflow-hidden rounded-md">
-                                        <img src={item.image} alt={item.name} className="project-image w-full h-full object-cover transition-transform duration-300 transform hover:scale-110" />
+                                        <img src={item.image} alt={item.name} className="project-image h-full w-full object-cover transition-transform duration-300 transform hover:scale-110" />
                                     </div>
                                 </>
                             )
