@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import CustomCard from './CustomCard'
 import TechCardWithPopover, { TCustomCardWithPopoverProps } from './TechCardWithPopover'
 import ShadcnIcon from "./assets/icons/shadcn.svg";
@@ -222,21 +223,65 @@ const TechStack = () => {
         },
     ]
 
+    const getDragAfterElement = (container: any, y: any, x: any) => {
+        const draggableElements = [...container.querySelectorAll('.draggable:not(.dragging)')];
+        return draggableElements.reduce((closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            const offsetXLeft = x - box.left - box.height / 2;
+
+            if (((offset < 0 && offset > closest.offset) && (offsetXLeft < 0 && offsetXLeft > closest.offset))) {
+                return { offset: offset, element: child }
+            } else {
+                return closest
+            }
+        }, { offset: Number.NEGATIVE_INFINITY }).element
+    }
+
+    const handleDragOver = (e: any) => {
+        e.preventDefault();
+        const container = document.querySelector(".stack-container");
+        if (container) {
+            const afterElement = getDragAfterElement(container, e.clientY, e.clientX)
+            const draggable = document.querySelector('.dragging')
+            if (draggable) {
+                if (afterElement == null) {
+                    container.appendChild(draggable)
+                } else {
+                    container.insertBefore(draggable, afterElement)
+                }
+            }
+        }
+    }
+
     return (
         <section className="flex flex-row gap-7">
             <CustomCard className="flex flex-col gap-7">
-                <div className="flex gap-12 flex-wrap lg:justify-center xl:justify-evenly">
+                <div className="flex gap-12 flex-wrap justify-center lg:justify-center xl:justify-evenly stack-container" onDragOver={handleDragOver}>
                     {
                         techStacks.map(item => (
-                            <TechCardWithPopover
+                            <motion.div
+                                layout
+                                draggable="true"
+                                layoutId={item.name}
                                 key={item.name}
-                                name={item.name}
-                                title={item.title}
-                                experience={item.experience}
-                                miniProjects={item.miniProjects}
-                                professionalExperience={item.professionalExperience}
-                                icon={item.icon}
-                            />
+                                dragElastic={1}
+                                transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+                                dragConstraints={{ left: 0, right: 500, top: 0, bottom: 300 }}
+                                onDragStart={(e: any) => { e.currentTarget.classList.add('dragging');}}
+                                onDragEnd={(e: any) => { e.currentTarget.classList.remove('dragging');}}
+                                className="draggable cursor-grabbing"
+                            >
+                                <TechCardWithPopover
+                                    key={item.name + item.title}
+                                    name={item.name}
+                                    title={item.title}
+                                    experience={item.experience}
+                                    miniProjects={item.miniProjects}
+                                    professionalExperience={item.professionalExperience}
+                                    icon={item.icon}
+                                />
+                            </motion.div>
                         ))
                     }
                 </div>

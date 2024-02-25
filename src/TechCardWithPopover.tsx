@@ -18,8 +18,6 @@ export type TCustomCardWithPopoverProps = {
 }
 
 
-
-
 const TechCardWithPopover = (props: TCustomCardWithPopoverProps) => {
     const [openPopover, setOpenPopover] = useState(false);
 
@@ -34,7 +32,11 @@ const TechCardWithPopover = (props: TCustomCardWithPopoverProps) => {
     return (
         <Popover open={openPopover}>
             <PopoverTrigger asChild>
-                <div data-aos={randomTransition[Math.floor(Math.random() * 8)]} onMouseEnter={handleOpenPopover} onMouseLeave={handleClosePopover}>
+                <div 
+                    data-aos={randomTransition[Math.floor(Math.random() * 8)]} 
+                    onMouseEnter={handleOpenPopover} 
+                    onMouseLeave={handleClosePopover} 
+                    >
                     <CustomCard key={props.title} className="bg-customAccentCard text-white w-48 flex flex-col gap-4 items-center justify-center hover:-translate-y-1 hover:bg-customAccentHoverCard ease-in transition">
                         <img src={props.icon} alt={props.name} className="h-20 object-contain" />
                         <p className="text-xl font-semibold">{props.title}</p>
