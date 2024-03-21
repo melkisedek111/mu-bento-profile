@@ -24,6 +24,9 @@ import MSSQLIcon from "./assets/icons/sql.svg";
 import OpenAIIcon from "./assets/icons/openai.svg";
 import CustomCard from './CustomCard';
 import { Badge } from './components/ui/badge';
+import NextJSIcon from "./assets/icons/nextjs.svg"
+import GetStreamIcon from "./assets/icons/getstream.svg"
+import GoogleAuthIcon from "./assets/icons/googlelauth.svg"
 
 
 type TExperienceStack = {
@@ -46,6 +49,18 @@ export type TExperience = {
 }
 
 export const technologies = {
+    googleAuth: {
+        name: "Google Auth",
+        icon: GoogleAuthIcon
+    },
+    getStream: {
+        name: "GetStream",
+        icon: GetStreamIcon
+    },
+    nextjs: {
+        name: "Next JS",
+        icon: NextJSIcon
+    },
     shadcn: {
         name: "Shadcn UI",
         icon: ShadcnIcon

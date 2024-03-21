@@ -3,6 +3,7 @@ import { Badge } from './components/ui/badge'
 import { technologies } from './Experience'
 import { IoIosArrowRoundForward } from "react-icons/io";
 
+import DevFinder from "./assets/images/dev-finder.png";
 import AgendaAppImage from "./assets/images/agenda.png";
 import AmazonImage from "./assets/images/amazonclone.png";
 import CrownAppImage from "./assets/images/crown.png";
@@ -37,20 +38,18 @@ type TProjects = {
 const Project = () => {
     const projects: TProjects[] = [
         {
-            name: "Agenda Editor App",
+            name: "Dev Finder",
             link: "https://main--serene-sorbet-728105.netlify.app/",
             stacks: [
+                technologies.nextjs,
+                technologies.googleAuth,
+                technologies.getStream,
                 technologies.react,
-                technologies.mongodb,
                 technologies.typescript,
                 technologies.javascript,
-                technologies.nodeJs,
                 technologies.shadcn,
-                technologies.html,
-                technologies.css,
-                technologies.vite
             ],
-            image: AgendaAppImage
+            image: DevFinder
         },
         {
             name: "TicTacToe",
@@ -88,6 +87,22 @@ const Project = () => {
                 technologies.mongodb,
             ],
             image: CrownAppImage
+        },
+        {
+            name: "Agenda Editor App",
+            link: "https://main--serene-sorbet-728105.netlify.app/",
+            stacks: [
+                technologies.react,
+                technologies.mongodb,
+                technologies.typescript,
+                technologies.javascript,
+                technologies.nodeJs,
+                technologies.shadcn,
+                technologies.html,
+                technologies.css,
+                technologies.vite
+            ],
+            image: AgendaAppImage
         },
         {
             name: "Amazon Clone",
@@ -157,8 +172,10 @@ const Project = () => {
 
     const columns = 4;
 
-    const adjustedItems: TProjects[] = fillUpRows(projects, columns);
-    // data-aos={randomTransition[Math.floor(Math.random() * 8)]}
+    const adjustedItemsA: TProjects[] = fillUpRows(projects, columns);
+    adjustedItemsA.length;
+    const adjustedItems: TProjects[] = projects;
+
     return (
         <section className="flex flex-wrap gap-7 lg:justify-between xl:justify-normal">
             {
