@@ -152,28 +152,28 @@ const Project = () => {
         LottieChat
     ];
 
-    function fillUpRows(items: TProjects[], columns: number) {
-        const totalItems = items.length;
-        const itemsInLastRow = totalItems % columns === 0 ? columns : totalItems % columns;
-        const itemsNeededToFillRow = columns - itemsInLastRow;
+    // function fillUpRows(items: TProjects[], columns: number) {
+    //     const totalItems = items.length;
+    //     const itemsInLastRow = totalItems % columns === 0 ? columns : totalItems % columns;
+    //     const itemsNeededToFillRow = columns - itemsInLastRow;
 
-        if (itemsNeededToFillRow !== 0) {
-            for (let i = 0; i < itemsNeededToFillRow; i++) {
-                items.push({
-                    isLottie: true,
-                    lottie: lotties[Math.floor(Math.random() * 6)],
-                    stacks: []
-                }); // Add placeholder items to fill up the last row
-            }
-        }
+    //     if (itemsNeededToFillRow !== 0) {
+    //         for (let i = 0; i < itemsNeededToFillRow; i++) {
+    //             items.push({
+    //                 isLottie: true,
+    //                 lottie: lotties[Math.floor(Math.random() * 6)],
+    //                 stacks: []
+    //             }); // Add placeholder items to fill up the last row
+    //         }
+    //     }
 
-        return items.sort(() => Math.random() - 0.5);;
-    }
+    //     return items.sort(() => Math.random() - 0.5);;
+    // }
 
-    const columns = 4;
+    // const columns = 4;
 
-    const adjustedItemsA: TProjects[] = fillUpRows(projects, columns);
-    adjustedItemsA.length;
+    // const adjustedItemsA: TProjects[] = fillUpRows(projects, columns);
+    // adjustedItemsA.length;
     const adjustedItems: TProjects[] = projects;
 
     return (
