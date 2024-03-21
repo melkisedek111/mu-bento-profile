@@ -48,7 +48,7 @@ const Project = () => {
     const projects: TProjects[] = [
         {
             name: "Dev Finder",
-            link: "https://main--serene-sorbet-728105.netlify.app/",
+            link: "https://dev-finder-jde7.onrender.com/",
             stacks: [
                 technologies.nextjs,
                 technologies.googleAuth,
