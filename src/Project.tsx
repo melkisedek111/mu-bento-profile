@@ -36,6 +36,15 @@ type TProjects = {
 }
 
 const Project = () => {
+    const lotties = [
+        LottieProjectManagement,
+        LottieQualityProduct,
+        LottieSocialMedia,
+        LottieSuccess,
+        LottieWorkspace,
+        LottieChat
+    ];
+
     const projects: TProjects[] = [
         {
             name: "Dev Finder",
@@ -141,16 +150,12 @@ const Project = () => {
             ],
             image: SlackImage
         },
+        {
+            isLottie: true,
+            lottie: lotties[Math.floor(Math.random() * 6)],
+            stacks: []
+        }
     ]
-
-    const lotties = [
-        LottieProjectManagement,
-        LottieQualityProduct,
-        LottieSocialMedia,
-        LottieSuccess,
-        LottieWorkspace,
-        LottieChat
-    ];
 
     // function fillUpRows(items: TProjects[], columns: number) {
     //     const totalItems = items.length;
